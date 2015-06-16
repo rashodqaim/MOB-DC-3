@@ -5,20 +5,20 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>22DB36D5-13A7-429F-918B-5921C299C1EF</string>
+	<string>CB8EFEFA-7E87-4994-B595-7E6DDD9B5E0C</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Classwork Lession 3</string>
+	<string>playground</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>BFDAA4717EEB9965546778FF65FDEFE74CECE3C5</key>
 		<string>https://github.com/rashodqaim/MOB-DC-3.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Classwork/Lesson03/Classwork Lession 3.playground</string>
+	<string>Classwork/Lesson04/Classwork Lession 4.playground/playground.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>BFDAA4717EEB9965546778FF65FDEFE74CECE3C5</key>
-		<string>../../..</string>
+		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/rashodqaim/MOB-DC-3.git</string>

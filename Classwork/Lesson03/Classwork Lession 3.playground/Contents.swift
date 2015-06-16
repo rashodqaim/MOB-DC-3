@@ -1,6 +1,6 @@
 var name: String = "Rashod"
 
-var age: Int = 1
+var age: Int = 25
 
 
 println("hello \(name), you \(age) years old")
@@ -25,6 +25,9 @@ println("drive and Vote")
 } else {println("Nothig fun")}
 
 
-
+for i in 1...50 {
+    let solution = (i * 7) - 1
+    println(i)
+}
 
 
