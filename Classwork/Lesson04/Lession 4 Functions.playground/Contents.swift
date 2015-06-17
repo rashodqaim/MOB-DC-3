@@ -21,13 +21,13 @@ func hare(age: Int, name: String) {
     println("My name is \(name) and I am \(age) years old")
 }
 
-hare(29, "Rashod")
+hare(25, "Rashod")
 
 func functionWithOptional(age: Int, name: String, location: String?) {
     println("My name is \(name) and I am \(age) years old")
     
     if let location = location {
-        println("...and I m from \(location)")
+        println("...and I am from \(location)")
     }
 }
 functionWithOptional(25, "Rashod", "Washingtion DC")
@@ -47,9 +47,11 @@ func lastFunction(alpha: Int, beta: Int, name: String, decimal: Float?) {
         
         println("My name is \(name) and I have \(number) Finger!")
         println("I have $\(decimal) in the bank")
-        else { println("I am poor")
         }
     }
-}
 lastFunction(1, 10, "Rashod", 3.00)
 lastFunction(1, 4, "luck", 4.00)
+
+
+functionWithOptional(23, "Mike", "New York")
+cat("Jimmy")
