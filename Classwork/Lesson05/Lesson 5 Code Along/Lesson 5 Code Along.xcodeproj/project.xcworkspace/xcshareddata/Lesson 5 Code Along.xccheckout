@@ -14,11 +14,11 @@
 		<string>https://github.com/rashodqaim/MOB-DC-3.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Lessons/Lesson05/code-along/Lesson 5 Code Along/Lesson 5 Code Along.xcodeproj</string>
+	<string>Classwork/Lesson05/Lesson 5 Code Along/Lesson 5 Code Along.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>BFDAA4717EEB9965546778FF65FDEFE74CECE3C5</key>
-		<string>../../../../../..</string>
+		<string>../../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/rashodqaim/MOB-DC-3.git</string>

@@ -52,6 +52,3 @@ func lastFunction(alpha: Int, beta: Int, name: String, decimal: Float?) {
 lastFunction(1, 10, "Rashod", 3.00)
 lastFunction(1, 4, "luck", 4.00)
 
-
-functionWithOptional(23, "Mike", "New York")
-cat("Jimmy")
