@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var factLabel: UILabel!
     @IBOutlet weak var generateButton: UIButton!
+    @IBOutlet weak var factButton: UIControl!
     
     var numberOfTime = 0
     var myFactbook = Factbook()
@@ -33,7 +34,7 @@ class ViewController: UIViewController {
         
         generateButton.setTitleColor(randomColor, forState: UIControlState.Normal)
         generateButton.backgroundColor = randomColor
-    
+        
     }
 
 }
