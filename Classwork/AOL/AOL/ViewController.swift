@@ -59,6 +59,12 @@ class ViewController: UIViewController
         }
     }
     
+    @IBAction func clearFields(sender: UIButton) {
+        nameField.text = nil
+        ageField.text = nil
+        sexField.text = nil
+        locationField.text = nil
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

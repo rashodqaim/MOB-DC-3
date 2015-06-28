@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>113A7E55-B480-4F45-8B2A-EBACC9EF88F1</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>AOL</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>BFDAA4717EEB9965546778FF65FDEFE74CECE3C5</key>
 		<string>https://github.com/rashodqaim/MOB-DC-3.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Classwork/AOL/AOL.xcodeproj/project.xcworkspace</string>
+	<string>Classwork/AOL/AOL.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>BFDAA4717EEB9965546778FF65FDEFE74CECE3C5</key>
