@@ -8,11 +8,23 @@
 
 import UIKit
 
-class ArrayViewController: UIViewController {
+class ArrayViewController: UIViewController, UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource {
 
+    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var tableView: UITableView!
+    var array = [String]()
+    let cellID = "cellID"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.dismissViewControllerAnimated(false, completion: nil)
+        
+        
+        nameField.delegate = self
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: cellID)
+        
+        //        self.dismissViewControllerAnimated(false, completion: nil)
         self.dismissViewControllerAnimated(false, completion: { () -> Void in
             self.view.backgroundColor = UIColor.blueColor()
         })
@@ -23,5 +35,29 @@ class ArrayViewController: UIViewController {
         
         */
     }
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+     self.view.endEditing(true)
+        
+        array.append(self.nameField.text)
+        println(array)
+        
+        tableView.reloadData()
+        
+        return true
+    }
+    
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return array.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellID) as! UITableViewCell
+        
+       cell.textLabel?.text = array[indexPath.row]
+        
+        return cell
+    }
+    
 }
-

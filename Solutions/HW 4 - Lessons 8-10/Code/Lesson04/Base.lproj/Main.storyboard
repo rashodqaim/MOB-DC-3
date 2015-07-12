@@ -32,6 +32,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+<<<<<<< HEAD
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6n3-2x-TS2">
                                 <rect key="frame" x="148" y="107" width="347" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -45,6 +46,21 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="56" y="305" width="288" height="334"/>
+=======
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TMU-KJ-PhJ">
+                                <rect key="frame" x="119" y="102" width="362" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="125" width="256" height="30"/>
+                                </variation>
+                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="QCy-Qm-dqX">
+                                <rect key="frame" x="119" y="199" width="363" height="363"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="305" width="256" height="256"/>
+>>>>>>> c59de2c5e244e5209bf434d2caa28078cbec9f13
                                 </variation>
                             </tableView>
                         </subviews>
@@ -58,8 +74,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+<<<<<<< HEAD
                         <outlet property="Field" destination="6n3-2x-TS2" id="hPe-lk-eod"/>
                         <outlet property="tableview" destination="96M-PR-W05" id="fY9-nu-ibW"/>
+=======
+                        <outlet property="field" destination="TMU-KJ-PhJ" id="jTK-Dw-Fq2"/>
+                        <outlet property="tableView" destination="QCy-Qm-dqX" id="AbF-zb-JIB"/>
+>>>>>>> c59de2c5e244e5209bf434d2caa28078cbec9f13
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
