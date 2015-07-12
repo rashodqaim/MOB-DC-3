@@ -45,7 +45,7 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("nameCell", forIndexPath: indexPath) as! UITableViewCell
-        let currentName = Dic[indexPath.row]
+        let currentName = Dic([code: field1.text, name: field2.text])
         cell.textLabel?.text = currentName["code"]
         cell.detailTextLabel?.text = currentName["name"]
         
@@ -59,7 +59,7 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         } else {
             field2.resignFirstResponder()
             
-            Dic.append(["code": field1.text, "name": field2.text])
+//            Dic(["code": field1.text, "name": field2.text])
             
             tableView.reloadData()
             
