@@ -23,7 +23,7 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         field2.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
-
+        
         
         /*
         TODO three: Add TWO text views and a table view to this view controller, either using code or storybaord. Accept keyboard input from the two text views. When the 'return' button is pressed on the SECOND text view, add the text view data to a dictionary. The KEY in the dictionary should be the string in the first text view, the VALUE should be the second.
@@ -31,14 +31,14 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         TODO five: Make the background of the text boxes in this controller BLUE when the keyboard comes up, and RED when it goes down. Start with UIKeyboardWillShowNotification and NSNotificationCenter.
         */
         
-    NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         
         
         //  Dic.append(["code": "Rashod", "name": "Qaim"])
     }
     func keyboardWillShow(notfaction:NSNotification) {
         
-//        let UIKeyboardWillShowNotification = UIColor.blueColor()
+        //        let UIKeyboardWillShowNotification = UIColor.blueColor()
         
     }
     
@@ -61,19 +61,19 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             field2.becomeFirstResponder()
         } else {
             field2.resignFirstResponder()
-
-         
+            
+            
             Arr.append(["code": field1.text, "name": field2.text])
- 
+            
             tableView.reloadData()
             
             field1.text = ""
             field2.text = ""
         }
-            return true
-
-
+        return true
+        
+        
     }
-
-
+    
+    
 }
