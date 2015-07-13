@@ -14,7 +14,7 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet weak var field1: UITextField!
     @IBOutlet weak var field2: UITextField!
     @IBOutlet weak var tableView: UITableView!
-    var Dic = [[String: String]]()
+    var Arr = [[String: String]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,15 +37,18 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         //  Dic.append(["code": "Rashod", "name": "Qaim"])
     }
     func keyboardWillShow(notfaction:NSNotification) {
-        let UIKeyboardWillShowNotification = UIColor.blueColor()
+        
+//        let UIKeyboardWillShowNotification = UIColor.blueColor()
+        
     }
     
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Dic.count
+        return Arr.count
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("nameCell", forIndexPath: indexPath) as! UITableViewCell
-        let currentName = Dic([code: field1.text, name: field2.text])
+        let currentName = Arr[indexPath.row]
         cell.textLabel?.text = currentName["code"]
         cell.detailTextLabel?.text = currentName["name"]
         
@@ -58,18 +61,19 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             field2.becomeFirstResponder()
         } else {
             field2.resignFirstResponder()
-            
-//            Dic(["code": field1.text, "name": field2.text])
-            
+
+         
+            Arr.append(["code": field1.text, "name": field2.text])
+ 
             tableView.reloadData()
             
             field1.text = ""
             field2.text = ""
         }
-    return true
+            return true
 
 
-}
+    }
 
 
 }
