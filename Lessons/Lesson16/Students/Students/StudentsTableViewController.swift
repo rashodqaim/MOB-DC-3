@@ -60,6 +60,8 @@ class StudentsTableViewController: UITableViewController, StudentDelegate {
         if editingStyle == .Delete {
             // Delete the row from the data source
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            
+            students.removeAtIndex(indexPath.row)
         }
     }
     

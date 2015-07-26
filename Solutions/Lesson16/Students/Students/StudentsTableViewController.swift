@@ -10,7 +10,7 @@ import UIKit
 
 class StudentsTableViewController: UITableViewController, StudentDelegate {
     
-    var students = [Student]()
+    private var store = StudentStore.sharedInstance
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,22 +33,22 @@ class StudentsTableViewController: UITableViewController, StudentDelegate {
     }
     
     // MARK: - Student Delegate
-    func addStudent(#newStudent: Student) {
-        students.append(newStudent)
+    func addStudent(#name: String, location: String) {
+        store.addStudentWithName(name, location: location)
         
         tableView.reloadData()
     }
 
     // MARK: - Table view data source
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return students.count
+        return store.students.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("studentCell", forIndexPath: indexPath) as! UITableViewCell
         
-        let studentForRow = students[indexPath.row]
+        let studentForRow = store.students[indexPath.row]
         cell.textLabel?.text = studentForRow.name
         cell.detailTextLabel?.text = studentForRow.location
 
@@ -59,6 +59,8 @@ class StudentsTableViewController: UITableViewController, StudentDelegate {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
+            store.deleteStudentAtIndex(indexPath.row)
+            
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         }
     }

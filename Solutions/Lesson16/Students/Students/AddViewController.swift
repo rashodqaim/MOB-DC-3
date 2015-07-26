@@ -9,7 +9,7 @@
 import UIKit
 
 protocol StudentDelegate {
-    func addStudent(#newStudent: Student)
+    func addStudent(#name: String, location: String)
 }
 
 class AddViewController: UIViewController, UITextFieldDelegate {
@@ -67,12 +67,8 @@ class AddViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        // If we get here we know that both fields have a value
-        // So we create a new student
-        let newStudent = Student(name: nameField.text, location: locationField.text)
-        
         // We pass the student to the delegate
-        delegate?.addStudent(newStudent: newStudent)
+        delegate?.addStudent(name: nameField.text, location: locationField.text)
         
         dismiss(UIBarButtonItem())
     }

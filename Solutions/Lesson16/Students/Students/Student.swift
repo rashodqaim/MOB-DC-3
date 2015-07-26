@@ -7,8 +7,11 @@
 //
 
 import Foundation
+import CoreData
 
-struct Student {
-    var name: String
-    var location: String
+class Student: NSManagedObject {
+
+    @NSManaged var name: String
+    @NSManaged var location: String
+
 }
