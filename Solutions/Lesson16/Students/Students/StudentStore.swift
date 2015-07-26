@@ -47,11 +47,9 @@ class StudentStore {
     }
     
     func addStudentWithName(name: String, location: String) {
-        // Get the Student entity
-        let entity = NSEntityDescription.entityForName("Student", inManagedObjectContext: context)
-        
         // Create a new student
-        let newStudent = Student(entity: entity!, insertIntoManagedObjectContext: context)
+        let newStudent = NSEntityDescription.insertNewObjectForEntityForName("Student",
+            inManagedObjectContext: context) as! Student
         
         newStudent.name = name
         newStudent.location = location
