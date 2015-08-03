@@ -9,7 +9,7 @@
         <scene sceneID="nm4-8i-z0e">
             <objects>
                 <tableViewController id="qiY-W1-Ock" customClass="StudentsTableViewController" customModule="Students" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Hij-R5-ByD">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Hij-R5-ByD">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -33,6 +33,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="KhG-fG-oOl" kind="presentation" identifier="upDateStudent" id="wY5-if-OlN"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -149,4 +152,7 @@
             <point key="canvasLocation" x="1232" y="1138"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="wY5-if-OlN"/>
+    </inferredMetricsTieBreakers>
 </document>

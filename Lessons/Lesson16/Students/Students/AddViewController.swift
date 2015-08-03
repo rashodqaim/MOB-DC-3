@@ -7,16 +7,17 @@
 //
 
 import UIKit
-
 protocol StudentDelegate {
-    func addStudent(#newStudent: Student)
+    func addStudent(name: String, loaction: String)
 }
+
 
 class AddViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var locationField: UITextField!
     
     var delegate: StudentDelegate?
+    
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
@@ -76,10 +77,9 @@ class AddViewController: UIViewController, UITextFieldDelegate {
         
         // If we get here we know that both fields have a value
         // So we create a new student
-        let newStudent = Student(name: nameField.text, location: locationField.text)
         
         // We pass the student to the delegate
-        delegate?.addStudent(newStudent: newStudent)
+        delegate?.addStudent(nameField.text, loaction: locationField.text)
         
         dismiss(UIBarButtonItem())
     }

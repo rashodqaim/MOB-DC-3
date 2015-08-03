@@ -13,13 +13,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    
+    
+    
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         NSUserDefaults.standardUserDefaults().setObject("This is a string in user defaults!", forKey: "test_string")
         
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if let name = defaults.stringArrayForKey("test_string") {
+            println("name")
+        }
+        
+        let defaults2 = NSUserDefaults.standardUserDefaults()
+        if let name2 = defaults.stringArrayForKey("test_number") {
+            println("name2")
+        }
+        
+        
         NSUserDefaults.standardUserDefaults().setInteger(42, forKey: "test_number")
         return true
+    
     }
 
     func applicationWillResignActive(application: UIApplication) {
