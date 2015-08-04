@@ -16,13 +16,9 @@ class StudentsTableViewController: UITableViewController, AddStudentDelegate, UI
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
+        // Force the controller to reload on viewDidLoad
+        // and go to Parse.com
         refreshTable(UIRefreshControl())
     }
     
@@ -40,40 +36,45 @@ class StudentsTableViewController: UITableViewController, AddStudentDelegate, UI
     func imagePickerController(picker: UIImagePickerController,
         didFinishPickingImage image: UIImage!,
         editingInfo: [NSObject : AnyObject]!) {
+            
+            // Dismiss the view controller and on dismissal
+            // get the picture
             self.dismissViewControllerAnimated(true, completion: { () -> Void in
-                let newImage = PFObject(className: "Student")
-                newImage["student_name"] = "foo"
-                newImage["student_location"] = "bar"
-                
-                let imageData = UIImagePNGRepresentation(image)
-                let pfImage = PFFile(name: "photo", data: imageData)
-                
-                newImage["image"] = pfImage
-                
-                newImage.saveInBackgroundWithBlock { (success, error) -> Void in
-                    if error != nil {
-                        println("Could not save image \(error?.localizedDescription)")
-                        return
-                    }
-                    
-                    println("Did save picture")
-                }
+                // Let's be smart and use our delegate method
+                // Note: Updated the method from in class
+                self.addStudent("foo", location: "bar", image: image)
             })
+            
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "addStudent" {
+            // Get the destination VC (of type UINavigationController
             let destinationVC = segue.destinationViewController as! UINavigationController
+            
+            // Get a reference to the addStudentVC using topViewController
             let addVC = destinationVC.topViewController as! AddStudentViewController
             
+            // Set ourselves as delegate
             addVC.delegate = self
         }
     }
     
-    func addStudent(name: String, location: String) {
+    func addStudent(name: String, location: String, image: UIImage?) {
+        // Create a new Student PFObject
         let newStudent = PFObject(className: "Student")
         newStudent["student_name"] = name
         newStudent["student_location"] = location
+        
+        // If there is an image
+        if let image = image {
+            // Convert UIImage to NSData & PfImage
+            let imageData = UIImagePNGRepresentation(image)
+            let parseImage = PFFile(name: "photo", data: imageData)
+            
+            newStudent["image"] = parseImage
+        }
+        
         newStudent.saveInBackgroundWithBlock { (success, error) -> Void in
             if error != nil {
                 println("Could not save object with error \(error?.localizedDescription)")
@@ -81,25 +82,38 @@ class StudentsTableViewController: UITableViewController, AddStudentDelegate, UI
             }
             
             println("Saved student in background")
+            
+            // Append to the array
             self.students.append(newStudent)
+            
+            // Reload the tableView
             self.tableView.reloadData()
         }
     }
     
     @IBAction func refreshTable(sender: UIRefreshControl) {
-        // Go to parse
+        // Instantiate a PFQuery
         let query = PFQuery(className: "Student")
+        
+        // Sorting
         query.orderByDescending("updatedAt")
-//        query.whereKey("student_name", containsString: "ho")
+        
+        // If you want to look for a name/id
+        // query.whereKey("student_name", containsString: "ho")
+        
         query.findObjectsInBackgroundWithBlock { (results, error) -> Void in
             if error != nil {
                 println("could not grab students from parse")
                 return
             }
             
+            // Set self.students equal to the parse array
             self.students = results as! [PFObject]
+            
+            // Tell the refresh control to stop spinning
             sender.endRefreshing()
             
+            // Reload the tableView
             self.tableView.reloadData()
         }
     }
@@ -118,51 +132,5 @@ class StudentsTableViewController: UITableViewController, AddStudentDelegate, UI
         
         return cell
     }
-
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

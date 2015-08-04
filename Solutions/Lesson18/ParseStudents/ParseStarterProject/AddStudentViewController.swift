@@ -9,7 +9,7 @@
 import UIKit
 
 protocol AddStudentDelegate {
-    func addStudent(name: String, location: String)
+    func addStudent(name: String, location: String, image: UIImage?)
 }
 
 class AddStudentViewController: UIViewController {
@@ -28,7 +28,7 @@ class AddStudentViewController: UIViewController {
     }
     
     @IBAction func save(sender: UIBarButtonItem) {
-        delegate?.addStudent(nameField.text, location: locationField.text)
+        delegate?.addStudent(nameField.text, location: locationField.text, image: nil)
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 }
