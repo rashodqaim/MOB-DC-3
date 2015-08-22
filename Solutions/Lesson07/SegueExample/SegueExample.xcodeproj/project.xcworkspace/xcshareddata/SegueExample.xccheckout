@@ -5,13 +5,21 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
+<<<<<<< HEAD
 	<string>430D8340-7CBA-4CFE-8264-EA56540E47A1</string>
+=======
+	<string>91D6FD7D-E329-4FF4-BA54-BED7E1F94D91</string>
+>>>>>>> 18bc06c2f64910697a02ca67a358d935fbd402eb
 	<key>IDESourceControlProjectName</key>
 	<string>SegueExample</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>BFDAA4717EEB9965546778FF65FDEFE74CECE3C5</key>
+<<<<<<< HEAD
 		<string>https://github.com/rashodqaim/MOB-DC-3.git</string>
+=======
+		<string>https://github.com/ga-students/MOB-DC-3.git</string>
+>>>>>>> 18bc06c2f64910697a02ca67a358d935fbd402eb
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Solutions/Lesson07/SegueExample/SegueExample.xcodeproj</string>
@@ -21,7 +29,11 @@
 		<string>../../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
+<<<<<<< HEAD
 	<string>https://github.com/rashodqaim/MOB-DC-3.git</string>
+=======
+	<string>https://github.com/ga-students/MOB-DC-3.git</string>
+>>>>>>> 18bc06c2f64910697a02ca67a358d935fbd402eb
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
