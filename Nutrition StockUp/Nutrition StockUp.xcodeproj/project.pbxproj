@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B110818D1B88E0FA0015F08E /* stockup-logo1.png in Resources */ = {isa = PBXBuildFile; fileRef = B110818C1B88E0FA0015F08E /* stockup-logo1.png */; };
 		B1789E201B853F3300310522 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1789E1F1B853F3300310522 /* TableViewCell.swift */; };
 		B1789E221B85427900310522 /* NutritionFactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1789E211B85427900310522 /* NutritionFactsViewController.swift */; };
 		B1789E241B8549EC00310522 /* BrandsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1789E231B8549EC00310522 /* BrandsTableViewController.swift */; };
@@ -17,6 +16,9 @@
 		B1874C221B7651FB003AA824 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1874C211B7651FB003AA824 /* Images.xcassets */; };
 		B1874C251B7651FB003AA824 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1874C231B7651FB003AA824 /* LaunchScreen.xib */; };
 		B1874C311B7651FB003AA824 /* Nutrition_StockUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1874C301B7651FB003AA824 /* Nutrition_StockUpTests.swift */; };
+		B18E949E1B8A300600039F89 /* stockup-logo1.png in Resources */ = {isa = PBXBuildFile; fileRef = B18E949D1B8A300600039F89 /* stockup-logo1.png */; };
+		B1F0876A1B8A39EA004682E8 /* BrandNutritionFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F087691B8A39EA004682E8 /* BrandNutritionFile.swift */; };
+		B1F0876C1B8A75EE004682E8 /* TakePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F0876B1B8A75EE004682E8 /* TakePhotoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +32,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B110818C1B88E0FA0015F08E /* stockup-logo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stockup-logo1.png"; sourceTree = "<group>"; };
 		B1789E1F1B853F3300310522 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		B1789E211B85427900310522 /* NutritionFactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NutritionFactsViewController.swift; sourceTree = "<group>"; };
 		B1789E231B8549EC00310522 /* BrandsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrandsTableViewController.swift; sourceTree = "<group>"; };
@@ -44,6 +45,9 @@
 		B1874C2A1B7651FB003AA824 /* Nutrition StockUpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Nutrition StockUpTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1874C2F1B7651FB003AA824 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1874C301B7651FB003AA824 /* Nutrition_StockUpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nutrition_StockUpTests.swift; sourceTree = "<group>"; };
+		B18E949D1B8A300600039F89 /* stockup-logo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stockup-logo1.png"; sourceTree = "<group>"; };
+		B1F087691B8A39EA004682E8 /* BrandNutritionFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrandNutritionFile.swift; sourceTree = "<group>"; };
+		B1F0876B1B8A75EE004682E8 /* TakePhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakePhotoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,13 +89,15 @@
 		B1874C171B7651FB003AA824 /* Nutrition StockUp */ = {
 			isa = PBXGroup;
 			children = (
+				B18E949D1B8A300600039F89 /* stockup-logo1.png */,
 				B1874C1A1B7651FB003AA824 /* AppDelegate.swift */,
 				B1874C1C1B7651FB003AA824 /* ViewController.swift */,
 				B1789E1F1B853F3300310522 /* TableViewCell.swift */,
 				B1874C1E1B7651FB003AA824 /* Main.storyboard */,
+				B1F0876B1B8A75EE004682E8 /* TakePhotoViewController.swift */,
 				B1789E231B8549EC00310522 /* BrandsTableViewController.swift */,
 				B1789E211B85427900310522 /* NutritionFactsViewController.swift */,
-				B110818C1B88E0FA0015F08E /* stockup-logo1.png */,
+				B1F087691B8A39EA004682E8 /* BrandNutritionFile.swift */,
 				B1874C211B7651FB003AA824 /* Images.xcassets */,
 				B1874C231B7651FB003AA824 /* LaunchScreen.xib */,
 				B1874C181B7651FB003AA824 /* Supporting Files */,
@@ -204,7 +210,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B110818D1B88E0FA0015F08E /* stockup-logo1.png in Resources */,
+				B18E949E1B8A300600039F89 /* stockup-logo1.png in Resources */,
 				B1874C201B7651FB003AA824 /* Main.storyboard in Resources */,
 				B1874C251B7651FB003AA824 /* LaunchScreen.xib in Resources */,
 				B1874C221B7651FB003AA824 /* Images.xcassets in Resources */,
@@ -225,8 +231,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1F0876A1B8A39EA004682E8 /* BrandNutritionFile.swift in Sources */,
 				B1789E201B853F3300310522 /* TableViewCell.swift in Sources */,
 				B1874C1D1B7651FB003AA824 /* ViewController.swift in Sources */,
+				B1F0876C1B8A75EE004682E8 /* TakePhotoViewController.swift in Sources */,
 				B1874C1B1B7651FB003AA824 /* AppDelegate.swift in Sources */,
 				B1789E241B8549EC00310522 /* BrandsTableViewController.swift in Sources */,
 				B1789E221B85427900310522 /* NutritionFactsViewController.swift in Sources */,

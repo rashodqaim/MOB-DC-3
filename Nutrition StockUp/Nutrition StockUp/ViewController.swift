@@ -12,7 +12,7 @@ class ViewController: UIViewController, UITableViewDelegate {
     
     
     
-    @IBOutlet weak var Stockup: UIImageView!
+
     
     
     

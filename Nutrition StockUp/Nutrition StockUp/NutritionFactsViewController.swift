@@ -8,22 +8,34 @@
 
 import UIKit
 
-class NutritionFactsViewController: UIViewController {
+class NutritionFactsViewController: UITableViewController {
 
-    @IBOutlet weak var facts: UILabel!
+    var Nutrition = [String]()
     
-    var healthfacts: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.facts.text = self.healthfacts
-
         // Do any additional setup after loading the view.
     }
 
    
     
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return Nutrition.count
+    }
+    
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell = self.tableView.dequeueReusableCellWithIdentifier("NutritionCell", forIndexPath: indexPath) as! UITableViewCell
+        
+        
+        cell.textLabel?.text = Nutrition[indexPath.row]
+        
+        
+        
+        return cell
+    }
     
     
     
@@ -47,5 +59,4 @@ class NutritionFactsViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

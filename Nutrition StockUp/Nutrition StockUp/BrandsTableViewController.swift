@@ -11,12 +11,30 @@ import UIKit
 class BrandsTableViewController: UITableViewController {
     
     
-    var data = ["Lays", "Sinkers", "Sabra Hummus"]
+    var data = [String]()
+    
+    
+    var Nutrition = [BrandNutrition]()
 
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    
+        data = ["Lays", "Sinkers", "Sabra Hummus"]
+        
+        Nutrition = [BrandNutrition(secondTitle:["Calories 160", "Total Fat 10g", "Sodium 170mg"], Pic:""),BrandNutrition(secondTitle:["Calories 218", "Total Fat 7.22g", "Sodium 254mg"], Pic:""),BrandNutrition(secondTitle:["Calories 90", "Total Fat 8g", "Sodium 90mg"], Pic:"")]
+    
+    }
+    
+    
+
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
 
+  
+    
 
 //    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        // #warning Incomplete method implementation.
@@ -31,12 +49,25 @@ class BrandsTableViewController: UITableViewController {
     
 
      override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Brands", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
         cell.textLabel?.text = data[indexPath.row]
         return cell
     }
     
-    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        var indexPath: NSIndexPath = self.tableView.indexPathForSelectedRow()!
+        
+        var DestViewControllor = segue.destinationViewController as! NutritionFactsViewController
+        
+        var BrandNut: BrandNutrition
+        
+        BrandNut = Nutrition[indexPath.row]
+        
+        DestViewControllor.Nutrition = BrandNut.secondTitle
+        
+        
+    }
     
     
     /*
